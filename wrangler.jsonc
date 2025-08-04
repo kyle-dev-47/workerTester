@@ -23,7 +23,7 @@
         "COUNTRY_CSV_URL": "https://staging.example.com/country.csv",
         "HELPLINE_CSV_URL": "https://staging.example.com/helpline.csv",
         "BEARER_TOKEN": "staging-token-12345"
-      }
+      },"name": "staging"
     },
     "production": {
       "vars": {
