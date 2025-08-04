@@ -3,8 +3,12 @@
 	"type": "module",
 	"scripts": {
 		"dev": "wrangler dev",
+		"staging": "wrangler dev --env staging",
+		"prod": "wrangler dev --env production",
 		"test": "vitest",
-		"deploy": "wrangler deploy --minify",
+		"deploy": "wrangler deploy --env development --minify",
+		"deploy-staging": "wrangler deploy --env staging --minify",
+		"deploy-prod": "wrangler deploy --env production --minify",
 		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
 	},
 	"dependencies": {
