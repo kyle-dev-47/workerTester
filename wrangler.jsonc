@@ -20,15 +20,15 @@
     },
     "staging": {
       "vars": {
-        "COUNTRY_CSV_URL": "https://staging.example.com/country.csv",
-        "HELPLINE_CSV_URL": "https://staging.example.com/helpline.csv",
+        "COUNTRY_CSV_URL": "https://docs.google.com/spreadsheets/d/1T9WMdhNigMWCtKzxaQv5_7l_NHAGSYF31kiGg1lNYrg/export?format=csv",
+        "HELPLINE_CSV_URL": "https://docs.google.com/spreadsheets/d/17BkJXrpmKtl-tduU3Hw7DlN8FKAPsl-MDkyjC8GNsYk/export?format=csv",
         "BEARER_TOKEN": "staging-token-12345"
       }
     },
     "production": {
       "vars": {
-        "COUNTRY_CSV_URL": "https://example.com/country.csv",
-        "HELPLINE_CSV_URL": "https://example.com/helpline.csv",
+        "COUNTRY_CSV_URL": "https://docs.google.com/spreadsheets/d/1T9WMdhNigMWCtKzxaQv5_7l_NHAGSYF31kiGg1lNYrg/export?format=csv",
+        "HELPLINE_CSV_URL": "https://docs.google.com/spreadsheets/d/17BkJXrpmKtl-tduU3Hw7DlN8FKAPsl-MDkyjC8GNsYk/export?format=csv",
         "BEARER_TOKEN": "prod-token-12345"
       }
     }
