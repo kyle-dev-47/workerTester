@@ -30,7 +30,7 @@
         "COUNTRY_CSV_URL": "https://example.com/country.csv",
         "HELPLINE_CSV_URL": "https://example.com/helpline.csv",
         "BEARER_TOKEN": "prod-token-12345"
-      }
+      },"name": "production"
     }
   }
 }
