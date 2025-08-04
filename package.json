@@ -9,7 +9,6 @@
 		"deploy": "wrangler deploy --env development --minify",
 		"deploy-staging": "wrangler deploy --env staging --minify",
 		"deploy-prod": "wrangler deploy --env production --minify",
-		"production": "wrangler deploy --env production --minify",
 		"cf-typegen": "wrangler types --env-interface CloudflareBindings"
 	},
 	"dependencies": {
