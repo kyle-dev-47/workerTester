@@ -1,46 +1,28 @@
-name: Deploy Worker to Cloudflare
+name: Deploy Worker
 
 on:
   push:
     branches:
-      - "main"
-      - "**"
+      - main
+      - staging
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 'lts/*'
 
-      - name: Deploy to Cloudflare
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to Cloudflare Worker
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: |
-            if [[ "${GITHUB_REF#refs/heads/}" == "main" ]]; then
-              echo "Deploying → production"
-              wrangler deploy --env production
-            else
-              echo "Deploying → staging"
-              wrangler deploy --env staging
-            fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Notify Slack
-        uses: 8398a7/action-slack@v3
-        if: always()
-        with:
-          status: ${{ job.status }}
-          fields: repo,ref,workflow
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
