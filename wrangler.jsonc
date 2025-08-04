@@ -1,0 +1,56 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "crisis-resources-helplines-worker",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-23",
+  "type": "module",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./public"
+  },
+  "observability": {
+    "enabled": true
+  },
+  /**
+   * Smart Placement
+   * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+   */
+  // "placement": { "mode": "smart" },
+
+  /**
+   * Bindings
+   * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
+   * databases, object storage, AI inference, real-time communication and more.
+   * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+   */
+
+  /**
+   * Environment Variables
+   * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
+   */
+  "vars": {
+    "COUNTRY_CSV_URL": "https://docs.google.com/spreadsheets/d/1T9WMdhNigMWCtKzxaQv5_7l_NHAGSYF31kiGg1lNYrg/export?format=csv",
+    "HELPLINE_CSV_URL": "https://docs.google.com/spreadsheets/d/17BkJXrpmKtl-tduU3Hw7DlN8FKAPsl-MDkyjC8GNsYk/export?format=csv",
+    "BEARER_TOKEN": "9b3e7c71fc6bf55ab393a49472fc4ea1141ec199ca85716c5485b233cd4eb774ee43fadc2312189ec0707d2d5e98a3e4f0628c4769c012b9a9731327f803b72c"
+  }
+  /**
+   * Note: Use secrets to store sensitive data.
+   * https://developers.cloudflare.com/workers/configuration/secrets/
+   */
+
+  /**
+   * Static Assets
+   * https://developers.cloudflare.com/workers/static-assets/binding/
+   */
+  // "assets": { "directory": "./public/", "binding": "ASSETS" },
+
+  /**
+   * Service Bindings (communicate between multiple Workers)
+   * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
+   */
+  // "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
+}

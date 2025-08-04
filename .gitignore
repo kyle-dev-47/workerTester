@@ -1,0 +1,36 @@
+# ----------------------------------------------------------------------
+# Node.js dependencies
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# TypeScript build outputs
+dist/
+build/
+*.js
+*.js.map
+*.cjs
+*.mjs
+
+# Environment & secrets
+.env
+*.env
+.dev.vars
+
+# Cloudflare Wrangler
+.wrangler/
+wrangler.lock
+worker-configuration.d.ts
+
+# Editors & OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+DEBUG.log*
